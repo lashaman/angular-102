@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "hello-world1999"
+  "defaultProject": "hello-world1999",
+  "cli": {
+    "analytics": false
+  }
 }
