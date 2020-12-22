@@ -1,6 +1,8 @@
-<app-header></app-header>
+<app-header [webTitle]="title" (tittleChanged)="childTitleChanged($event)"></app-header>
+<hr />
 <button  [disabled]="isDisabled" class="title">ეს არის გაუქმებული ღილაკი</button>
 <button (click)="logNameClicker()">გამოიტანე ბრძანება</button>
 
-<input type="number"  [value]="inputValue" (input)="inputFunction($event)">
-<span>{{inputValue}}</span>
+<input type="number" [(ngModel)]="inputValue">
+<span class="testIt">{{inputValue}}</span>
+<app-child *ngIf="inputValue" [valueExample]="inputValue"></app-child>

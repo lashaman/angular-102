@@ -25,8 +25,8 @@ export class AppComponent {
     this.inputValue = "teqsturi";
   }
 
-  inputFunction(event: any) {
-    console.log(event.target.value * 4);
-    this.inputValue = event.target.value;
+  childTitleChanged(changes: number) {
+    this.title = "შეცვლილი სათური, შვილმა მოითხოვა";
   }
+
 }
