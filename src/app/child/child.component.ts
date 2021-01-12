@@ -41,7 +41,7 @@ DoCheck,
     console.log('ngAfterContentInit component')
   }
 
-  ngAfterContentCheck(): void {
+  ngAfterContentChecked(): void {
     console.log('ngAfterContentCheck component')
   }
 

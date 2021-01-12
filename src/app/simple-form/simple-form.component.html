@@ -1,0 +1,55 @@
+<form [formGroup]="contact" (ngSubmit)="onSubmit()">
+  <div>
+    <label appHighlight for="firstname">first name</label>
+    <input formControlName="firstname" type="text" id="firstname" name="firstname">
+    <div *ngIf="!contact.controls.firstname?.valid && (contact.controls.firstname?.dirty || contact.controls.firstname?.touched) ">
+      <p style="color: red" *ngIf="contact.controls.firstname?.errors?.required">*გთხოვთ შეავსოთ აუცილებელი ველი: სახელი</p>
+      <p style="color: red" *ngIf="contact.controls.firstname?.errors?.minlength">*ველი: სახელი არასწორად არის შევსუებული</p>
+    </div>
+  </div>
+  <div>
+    <label for="lastname">last name </label>
+    <input formControlName="lastname" type="text" id="lastname" name="lastname">
+    <div *ngIf="!contact.controls.lastname?.valid && (contact.controls.lastname?.dirty || contact.controls.lastname?.touched) ">
+      <p style="color: red" *ngIf="contact.controls.lastname?.errors?.required">*გთხოვთ შეავსოთ აუცილებელი ველი: გვარი</p>
+      <p style="color: red" *ngIf="contact.controls.lastname?.errors?.minlength">*ველი: გვარი არასწორად არის შევსუებული</p>
+    </div>
+  </div>
+  <div>
+    <label for="gender">gender </label>
+    <select formControlName="gender" name="gender" id="gender">
+      <option value="male">male</option>
+      <option value="female">female</option>
+    </select>
+  </div>
+<button [disabled]="!contact.valid" type="submit">ბათონი</button>
+</form>
+
+
+
+<!-- <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div>
+      <label for="firstname">first name</label>
+      <input [(ngModel)]="contact.firstname" required minlength="2" maxlength="15" type="text" id="firstname" name="firstname">
+      <div *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname?.dirty || contactForm.controls.firstname?.touched) ">
+        <p style="color: red" *ngIf="contactForm.controls.firstname?.errors?.required">*გთხოვთ შეავსოთ აუცილებელი ველი: სახელი</p>
+        <p style="color: red" *ngIf="contactForm.controls.firstname?.errors?.minlength">*ველი: სახელი არასწორად არის შევსუებული</p>
+      </div>
+    </div>
+    <div>
+      <label for="lastname">last name </label>
+      <input  [(ngModel)]="contact.lastname" required minlength="2" maxlength="15" type="text" id="lastname" name="lastname">
+      <div *ngIf="!contactForm.controls.lastname?.valid && (contactForm.controls.lastname?.dirty || contactForm.controls.lastname?.touched) ">
+        <p style="color: red" *ngIf="contactForm.controls.lastname?.errors?.required">*გთხოვთ შეავსოთ აუცილებელი ველი: გვარი</p>
+        <p style="color: red" *ngIf="contactForm.controls.lastname?.errors?.minlength">*ველი: გვარი არასწორად არის შევსუებული</p>
+      </div>
+    </div>
+    <div>
+      <label for="gender">gender </label>
+      <select [(ngModel)]="contact.gender" name="gender" id="gender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+    </div>
+  <button [disabled]="!contactForm.valid" type="submit">ბათონი</button>
+</form> -->

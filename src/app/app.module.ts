@@ -3,18 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
+import { ListComponent } from './list/list.component';
+import { SimpleFormComponent } from './simple-form/simple-form.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ChildComponent
+    ChildComponent,
+    ListComponent,
+    SimpleFormComponent,
+    HighlightDirective,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

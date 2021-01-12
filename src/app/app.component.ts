@@ -14,7 +14,7 @@ export interface ExampObj {
 export class AppComponent {
   title = 'hello, ეს არის angular 1 პროექტი';
   isDisabled = false;
-  inputValue: string = '';
+  inputValue = 0;
 
   logNameClicker() {
     this.logName({name: 'lasha', lastname: 'sumbadze'})
@@ -22,7 +22,7 @@ export class AppComponent {
 
   logName(human: ExampObj) {
     console.log(human);
-    this.inputValue = "teqsturi";
+    this.inputValue = 1;
   }
 
   childTitleChanged(changes: number) {

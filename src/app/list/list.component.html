@@ -1,0 +1,14 @@
+<ul >
+  <!-- for (let movie of this.movies) { -->
+  <!-- <li [ngStyle]="{'background-color': movie.releaseDate === 2001 ? 'red' : 'green', 'width':  ulWidth + 'px'}" *ngFor="let movie of movies"> -->
+    <li [ngClass]="{
+      'red-bg': movie.releaseDate === 2001,
+      'green-bg': movie.releaseDate !== 2001
+    }"  class="red green  display-default color-white" *ngFor="let movie of movies">
+      <!-- იქნებოდა ეს თუ რილიზ დეითი იქნებოდა 2001 <li style="background-color: red" *ngFor="let movie of movies"> -->
+      <!-- იქნებოდა ეს თუ რილიზ დეითი არ იქნებოდა 2001 <li style="background-color: green" *ngFor="let movie of movies"> -->
+      <!-- movie.title + '/' + movie.releaseDate + '/' + movie.director; -->
+      {{movie.title}} / {{movie.releaseDate}} / {{ movie.director}}
+   </li>
+  <!-- } -->
+</ul>
