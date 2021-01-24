@@ -1,0 +1,33 @@
+
+<p>{{ title | uppercase}}</p>
+<p>{{ title2 | lowercase}}</p>
+<p>{{ money | currency: 'CAD'}}</p>
+<p>{{ toDate | date: 'medium'}}</p>
+<p>{{ toDate | date: 'short'}}</p>
+<p>{{ toDate | date: 'dd-MM-y HH:mm'}}</p>
+<p>{{ num | number}}</p>
+
+<p>{{ 0.253 | percent: '1.2-4' }}</p>
+<p>
+  ლარი კონვერტაცია დოლარში
+<input [(ngModel)]="gelToUsd" type="number">
+<span> {{gelToUsd | currencyConverter: '$'}}</span>
+</p>
+<p>
+  დოლარის კონვერტაცია ლარში
+<input [(ngModel)]="usdToGel" type="number">
+<span> {{usdToGel | currencyConverter: '₾'}}</span>
+</p>
+
+<p>
+  ლარის კონვერტაცია ევროში
+<input [(ngModel)]="gelToEur" type="number">
+<span> {{gelToEur | currencyConverter: '€'}}</span>
+</p>
+
+<p>
+  ევროს კონვერტაცია ლარში
+<input [(ngModel)]="eurToGel" type="number">
+<span> {{eurToGel | currencyConverter: '₾' : '€'}}</span>
+</p>
+

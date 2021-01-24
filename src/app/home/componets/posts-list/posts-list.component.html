@@ -1,0 +1,68 @@
+<h2>პოსტების შექმნა</h2>
+<div>
+  <div>
+    <label>პოსტის სათაური</label>
+    <input type="text" [(ngModel)]="createPostData.title">
+  </div>
+  <div>
+    <label>პოსტის ტექსტი</label>
+    <input type="text" [(ngModel)]="createPostData.body">
+  </div>
+  <div>
+    <button (click)="createPost(createPostData)"> შექმნა </button>
+  </div>
+</div>
+<h2>აიდით მოძებნა</h2>
+<input type="text" [(ngModel)]="searchItem" (ngModelChange)="loadPostById()">
+<table *ngIf="searchResult.id !== 0">
+  <tr>
+    <td>{{searchResult.userId}}</td>
+    <td>{{searchResult.title}}</td>
+    <td>{{searchResult.body}}</td>
+    <td>{{searchResult.id}}</td>
+  </tr>
+</table>
+<hr />
+<table>
+  <thead>
+    <tr>
+      <th>მომხმარებლის აიდი</th>
+      <th>პოსტის სათაური</th>
+      <th>პოსტი</th>
+      <th>პოსტის აიდი</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{post.userId}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+      <td>{{post.id}}</td>
+      <td>
+        <button (click)="deletePost(post.id)">წაშლა</button>
+        <button (click)="openEdit(post.id)">შეცვლა</button>
+        <div *ngIf="post.id === postToEditId">
+          <div>
+            <label>უზერაიდი</label>
+            <input disabled type="text" [(ngModel)]="postToEdit.userId">
+          </div>
+          <div>
+            <label>სათაური</label>
+            <input type="text" [(ngModel)]="postToEdit.title">
+          </div>
+          <div>
+            <label>ტექსტი</label>
+            <input type="text" [(ngModel)]="postToEdit.body">
+          </div>
+          <div>
+            <label>პოსტის აიდი</label>
+            <input disabled type="text" [(ngModel)]="postToEdit.id">
+          </div>
+          <div>
+            <button (click)="editPost(postToEdit.id, postToEdit)">შეცვლა</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,12 +1,15 @@
-<app-header [webTitle]="title" (tittleChanged)="childTitleChanged($event)"></app-header>
+
 <hr />
+
 <!-- <button  [disabled]="isDisabled" class="title">ეს არის გაუქმებული ღილაკი</button>
 <button (click)="logNameClicker()">გამოიტანე ბრძანება</button>
 
 <input type="number" [(ngModel)]="inputValue">
 <span class="testIt">{{inputValue}}</span>
-<app-child *ngIf="inputValue" [valueExample]="inputValue"></app-child>
-<app-list></app-list> -->
-<app-simple-form></app-simple-form>
-<app-pipes></app-pipes>
+<app-child *ngIf="inputValue" [valueExample]="inputValue"></app-child> -->
+<!-- <app-list></app-list> -->
+<!-- <app-simple></app-simple> -->
+
+<!-- <app-pipes-example></app-pipes-example> -->
 <!-- <app-child [hidden]="!inputValue" [valueExample]="inputValue"></app-child> -->
+<router-outlet></router-outlet>

@@ -1,4 +1,5 @@
-<ul >
+<button (click)="loadMovies()">ფილმების ჩატვირთვა</button>
+<ul  *ngIf="movies">
   <!-- for (let movie of this.movies) { -->
   <!-- <li [ngStyle]="{'background-color': movie.releaseDate === 2001 ? 'red' : 'green', 'width':  ulWidth + 'px'}" *ngFor="let movie of movies"> -->
     <li [ngClass]="{
@@ -9,6 +10,7 @@
       <!-- იქნებოდა ეს თუ რილიზ დეითი არ იქნებოდა 2001 <li style="background-color: green" *ngFor="let movie of movies"> -->
       <!-- movie.title + '/' + movie.releaseDate + '/' + movie.director; -->
       {{movie.title}} / {{movie.releaseDate}} / {{ movie.director}}
+     <!-- <ng-container *ngIf="movie?.actors"><span  *ngFor="let actor of movie.actors">{{actor}},</span></ng-container> -->
    </li>
   <!-- } -->
 </ul>
